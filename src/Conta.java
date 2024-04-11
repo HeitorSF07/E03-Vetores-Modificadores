@@ -38,25 +38,9 @@ public class Conta {
             return false;
         }
     }
-
-
-    boolean transferir(Conta contaDestino, double valor) {
-        boolean saqueRealizado = this.sacar(valor);
-        if(saqueRealizado) {
-            boolean depositoRealizado = contaDestino.depositar(valor);
-            return depositoRealizado;
-        } else {
-            return false;
+    void extrato(){
+        for(int i=0; i<quantOP; i++) {
+            System.out.println(operacoes[i].tipo+" "+operacoes[i].valor+" "+ operacoes[i].data);
         }
-    }
-    void imprimir (){
-        System.out.println("Dono: "+Dono.Nome);
-        System.out.println("CPF: "+Dono.CPF);
-        System.out.println("Endereço: "+Dono.endereco);
-        System.out.println("Idade: "+Dono.idade);
-        System.out.println("Gênero: "+Dono.genero);
-        System.out.println("Número da conta: "+num);
-        System.out.println("Saldo: "+saldo);
-        System.out.println("Limite: "+limite);
     }
 }
